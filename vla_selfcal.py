@@ -1,6 +1,7 @@
 import os
 import subprocess
 import logging
+import sys
 
 
 # Set up logging
@@ -8,9 +9,14 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("selfcal")
 
 # Define paths and parameters
-msfile = "your_measurement_set.ms"  # Path to your Measurement Set
-output_dir = "selfcal_outputs"     # Directory for outputs
-os.makedirs(output_dir, exist_ok=True)
+msfile = "/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms"  # Path to your Measurement Set
+output_dir = "/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs"     # Directory for outputs
+
+try:
+	os.makedirs(output_dir, exist_ok=True)
+except:
+	print("Cannot make output directory!")
+	sys.exit()
 
 singularity_path = "/soft/singularity-3.8.4/bin/singularity" #Path to singularity installation
 singularity_bind_path = "/beegfs/general/mahatmav" #Path to directory to bind
@@ -27,11 +33,13 @@ gain_solutions = []  # Store gain calibration tables
 
 # Imaging parameters for WSClean
 imaging_params = {
-    "size": "1024 1024",          # Image size (pixels)
-    "scale": "1asec",             # Pixel scale
-    "weight": "briggs 0.0",       # Weighting scheme
-    "auto-threshold": "3.0",      # Threshold for CLEAN (σ)
-    "auto-mask": "4.0",           # Mask threshold (σ)
+    "size": "2048 2048",          # Image size (pixels)
+    "scale": "0.15asec",             # Pixel scale
+    "weight": "briggs -1",       # Weighting scheme
+    "auto-threshold": "1.0",      # Threshold for CLEAN (σ)
+    "auto-mask": "3.0",           # Mask threshold (σ)
+    "niter": "100000",			#Minor cycles
+    "nmiter": "20"				#Major cycles
 }
 
 # Function to run a command and check output
@@ -59,16 +67,20 @@ for idx, solint in enumerate(solution_intervals):
         "run",
         f"--bind {singularity_bind_path} {singularity_container_path}",
         "wsclean",
+        f"-no-update-model-required ",
+        f"-reorder ",
         f"-size {imaging_params['size']}",
         f"-scale {imaging_params['scale']}",
         f"-weight {imaging_params['weight']}",
         f"-auto-threshold {imaging_params['auto-threshold']}",
         f"-auto-mask {imaging_params['auto-mask']}",
         f"-name {image_prefix}",
+        f"-niter {imaging_params['niter']}",
+        f"-nmiter {imaging_params['nmiter']}",
         msfile,
     ]
-    if initial_model:
-        wsclean_cmd.append(f"-model {initial_model}")
+    #if initial_model: This doesn't need to exist, surely
+    #    wsclean_cmd.append(f"-model {initial_model}")
 
     run_command(" ".join(wsclean_cmd), shell=True)
 
@@ -77,8 +89,14 @@ for idx, solint in enumerate(solution_intervals):
     casa_script = f"""
 from casatasks import gaincal, applycal
 
+# Get FITS model image from WSClean
+importfits(fitsimage='{image_prefix}-model.fits', imagename='{image_prefix}-model.casaim')
+
+# Predict
+ft(vis='{msfile}', model='{image_prefix}-model.casaim', usescratch=True)
+
 # Perform gain calibration
-gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='1')
+gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', gaintype='G', calmode='p')
 
 # Apply calibration solutions to the MS
 applycal(vis='{msfile}', gaintable={gain_solutions + [gain_table]}, calwt=False)
