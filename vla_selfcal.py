@@ -67,6 +67,7 @@ for idx, solint in enumerate(solution_intervals):
 
     # WSClean imaging step
     image_prefix = f"{output_dir}/selfcal_cycle_{idx + 1}"
+
     wsclean_cmd = [
         singularity_path,
         "run",
@@ -91,8 +92,10 @@ for idx, solint in enumerate(solution_intervals):
     ]
     #if initial_model: This doesn't need to exist, surely
     #    wsclean_cmd.append(f"-model {initial_model}")
-
-    run_command(" ".join(wsclean_cmd), shell=True)
+    if os.path.exists(f"{output_dir}/selfcal_cycle_{idx + 1}-MFS-image.fits"): #don't image if exists
+    	print(f'First image exists already! Proceeding with calibration')
+    else:
+    	run_command(" ".join(wsclean_cmd), shell=True)
 
     # CASA calibration script
     gain_table = f"{output_dir}/gains_cycle_{idx + 1}.cal"
@@ -106,33 +109,34 @@ importfits(fitsimage='{image_prefix}-MFS-model.fits', imagename='{image_prefix}-
 ft(vis='{msfile}', model='{image_prefix}-MFS-model.casaim', usescratch=True)
 
 # Perform gain calibration
+print(solution_mode[idx])
+sys.exit()
 if solution_mode[idx]=="p":
     gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', gaintype='{solution_type[idx]}', calmode='{solution_mode[idx]}')
-elif solution_mode[idx]=="ap":
+if solution_mode[idx]=="ap":
     #Check the last phase-only and find its solint to do another round to pre-apply to ap
     for prev_idx in range(idx-1,-1,-1): #loop backwards from previous to first
         if solution_mode[prev_idx] == "p":
             prev_solint=solution_intervals[prev_idx]
             break
     temp_gain_table = f"{output_dir}/temp_pre_ap_cycle{idx+1}.cal"
-    gaincal(vis='{msfile}', caltable='{temp_gain_table}', solint='{prev_solint}', refant='ea23', 
-        gaintype='{solution_type[prev_idx]}', calmode='{solution_mode[prev_idx]}')
+    gaincal(vis='{msfile}', caltable='temp_gain_table', solint='prev_solint', refant='ea23', 
+        gaintype='solution_type[prev_idx]', calmode='solution_mode[prev_idx]')
     #Now do ap with previous p on the fly
     gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
-        gaintype='{solution_type[idx]}', calmode='{solution_type[idx]}', gaintable=['{temp_gain_table}'])
-"""
-# Collect recently created tables
+        gaintype='{solution_type[idx]}', calmode='{solution_type[idx]}', 
+        gaintable=['temp_gain_table'])
+
+    # Collect recently created tables
 
     current_gain_tables = []
     if temp_gain_table:
         current_gain_tables.append(temp_gain_table)#should include latest phase only
     current_gain_tables.append(gain_table)
-    gain_table_str = "[" + ", ".join([f"'{g}'" for g in current_gain_tables]) + "]"
+    gain_table_str = "[" + ", ".join([f"'g'" for g in current_gain_tables]) + "]"
 
-
-    casa_script+= f"""
     # Apply calibration solutions to the MS
-        applycal(vis='{msfile}', gaintable={gain_table_str}, calwt=False)
+    applycal(vis='{msfile}', gaintable=gain_table_str, calwt=False)
 	"""
     script_path = f"{output_dir}/casa_gaincal_cycle_{idx + 1}.py"
     with open(script_path, "w") as f:
