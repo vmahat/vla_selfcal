@@ -36,7 +36,7 @@ solution_type = ["G","G"]
 solution_mode = ["p","ap"]
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
-continue_imaging=True #Option to re-run imaging even if images exist
+continue_imaging=False #Option to re-run imaging even if images exist
 # Imaging parameters for WSClean
 imaging_params = {
 	"size": "2048 2048",          # Image size (pixels)
@@ -111,6 +111,7 @@ from casatasks import gaincal, applycal
 solution_mode = {solution_mode}
 solution_intervals = {solution_intervals}
 solution_type = {solution_type}
+temp_gain_table = None
 
 # Get FITS model image from WSClean
 importfits(fitsimage='{image_prefix}-MFS-model.fits', imagename='{image_prefix}-MFS-model.casaim',overwrite=True)
@@ -134,19 +135,20 @@ if '{solution_mode[idx]}'=="ap":
 		gaintype=solution_type[prev_idx], calmode=solution_mode[prev_idx])
 	#Now do ap with previous p on the fly
 	gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
-		gaintype='{solution_type[idx]}', calmode='{solution_type[idx]}', 
-		gaintable=['temp_gain_table'])
+		gaintype='{solution_type[idx]}', calmode='{solution_mode[idx]}', 
+		gaintable=[temp_gain_table])
 
 	# Collect recently created tables
 
-	current_gain_tables = []
-	if temp_gain_table:
-		current_gain_tables.append(temp_gain_table)#should include latest phase only
-	current_gain_tables.append(gain_table)
-	gain_table_str = "[" + ", ".join([f"'g'" for g in current_gain_tables]) + "]"
-
-    # Apply calibration solutions to the MS
-	applycal(vis='{msfile}', gaintable=gain_table_str, calwt=False)
+current_gain_tables = []
+if temp_gain_table:
+	current_gain_tables.append(temp_gain_table)#should include latest phase only
+current_gain_tables.append('{gain_table}')
+print(current_gain_tables)
+gain_table_str = " + ", ".join([g for g in current_gain_tables]) + "
+print(gain_table_str)
+# Apply calibration solutions to the MS
+applycal(vis='{msfile}', gaintable=current_gain_tables, calwt=False)
 	"""
 	script_path = f"{output_dir}/casa_gaincal_cycle_{idx + 1}.py"
 	with open(script_path, "w") as f:
