@@ -27,13 +27,10 @@ casa_path = "/soft/casa-latest/bin/casa"  # Path to CASA (use the correct path)
 initial_model = None               # Optional initial model
 
 # Self-calibration parameters
-solution_intervals = ["inf", "1min", "30s", "10s", "int","inf","60s"]  # Progressive solint values
-solution_type = ["G","G","G","G","G","G","G"]
-solution_mode = ["p","p","p","p","p","ap","ap"]
+solution_intervals = ["10s","int","inf","60s","30s","inf","inf"]  # Progressive solint values
+solution_type = ["G","G","G","G","G","B","B"]
+solution_mode = ["p","p","ap","ap","ap","",""]
 
-#solution_intervals = ["int","inf"]  # Progressive solint values
-#solution_type = ["G","G"]
-#solution_mode = ["p","ap"]
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
 continue_imaging=False #Option to re-run imaging even if images exist
@@ -44,7 +41,7 @@ imaging_params = {
 	"weight": "briggs -1",       # Weighting scheme
 	"auto-threshold": "0.5",      # Threshold for CLEAN (σ)
 	"auto-mask": "4.0",           # Mask threshold (σ)
-	"niter": "100000",			# Minor cycles
+	"niter": "500000",			# Minor cycles
 	"nmiter": "20",				# Major cycles
 	"channels-out": "12",		# Channels to do peak-finding
 	"fit-spectral-pol": "4",		# MFS	
@@ -136,17 +133,42 @@ if '{solution_mode[idx]}'=="ap":
 	#Now do ap with previous p on the fly
 	gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
 		gaintype='{solution_type[idx]}', calmode='{solution_mode[idx]}', 
-		gaintable=[temp_gain_table])
+		gaintable=[temp_gain_table],solnorm=True)
+if '{solution_type[idx]}'=="B":
+		#Check the last phase-only and find its solint to do another round to pre-apply to ap
+	for prev_idx in range({idx}-1,-1,-1): #loop backwards from previous to first
+		if solution_mode[prev_idx] == "p":
+			prev_solint=solution_intervals[prev_idx]
+			break
+	temp_p_gain_table = f"{output_dir}/temp_pre_bp_p_cycle{idx+1}.cal"
+	gaincal(vis='{msfile}', caltable=temp_p_gain_table, solint=prev_solint, refant='ea23', 
+		gaintype=solution_type[prev_idx], calmode=solution_mode[prev_idx])
+	#Now do ap with previous p on the fly
+	for prev_idx in range({idx}-1,-1,-1): #loop backwards from previous to first
+		if solution_mode[prev_idx] == "ap":
+			prev_solint=solution_intervals[prev_idx]
+			break
+	temp_ap_gain_table = f"{output_dir}/temp_pre_bp_ap_cycle{idx+1}.cal"
+	gaincal(vis='{msfile}', caltable=temp_ap_gain_table, solint=prev_solint, refant='ea23', 
+		gaintype=solution_type[prev_idx]', calmode=solution_mode[prev_idx], 
+		gaintable=[temp_p_gain_table],solnorm=True)
+
+	#Now do bp with previous p and ap solutions
+	bandpass(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
+		bandtype='{solution_type[idx]}', calmode=solution_mode[prev_idx], 
+		gaintable=[temp_p_gain_table,temp_ap_gain_table],solnorm=True)
 
 	# Collect recently created tables
 
 current_gain_tables = []
 if temp_gain_table:
 	current_gain_tables.append(temp_gain_table)#should include latest phase only
+if temp_p_gain_table:
+	current_gain_tables.append(temp_p_gain_table)#should include latest phase only
+if temp_ap_gain_table:
+	current_gain_tables.append(temp_ap_gain_table)#should include latest a+phase only
 current_gain_tables.append('{gain_table}')
-print(current_gain_tables)
-gain_table_str = " + ", ".join([g for g in current_gain_tables]) + "
-print(gain_table_str)
+
 # Apply calibration solutions to the MS
 applycal(vis='{msfile}', gaintable=current_gain_tables, calwt=False)
 	"""
