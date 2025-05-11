@@ -1,0 +1,255 @@
+2025-05-09 21:19:03	INFO	::casa	
+2025-05-09 21:19:03	INFO	::casa	
+2025-05-09 21:19:03	INFO	::casa	
+2025-05-09 21:19:03	INFO	::casa	
+2025-05-09 21:19:03	INFO	::casa	Python version 3.8.10
+2025-05-09 21:19:03	INFO	::casa	CASA Version PIPELINE 6.5.4.9
+2025-05-09 21:19:03	INFO	::casa	
+2025-05-09 21:19:03	INFO	::casa	Found an existing telemetry logfile: /home/mahatmav/.casa/casastats-6.5.4.9-6c2b5cd5169bd-20250508-142149.log
+2025-05-09 21:19:03	INFO	::casa	Telemetry log file: /home/mahatmav/.casa/casastats-6.5.4.9-6c2b5cd5169bd-20250508-142149.log
+2025-05-09 21:19:03	INFO	::casa	Checking telemetry submission interval
+2025-05-09 21:19:03	INFO	::casa	Telemetry submit interval not reached. Not submitting data.
+2025-05-09 21:19:03	INFO	::casa	Next telemetry data submission in: 5 days, 17:02:45.844755
+2025-05-09 21:19:04	INFO	::casa	optional configuration file config.py not found, continuing CASA startup without it
+2025-05-09 21:19:04	INFO	::casa	
+2025-05-09 21:19:04	INFO	::casa	Checking Measures tables in data repository sub-directory /home/mahatmav/.casa/data/geodetic
+2025-05-09 21:19:04	INFO	::casa	  IERSeop2000 (version date, last date in table (UTC)): 2025/03/10/15:15, 2025/02/08/00:00:00
+2025-05-09 21:19:04	INFO	::casa	  IERSeop97 (version date, last date in table (UTC)): 2025/03/10/15:15, 2025/02/08/00:00:00
+2025-05-09 21:19:04	INFO	::casa	  IERSpredict (version date, last date in table (UTC)): 2025/03/13/15:15, 2025/06/11/00:00:00
+2025-05-09 21:19:04	INFO	::casa	  TAI_UTC (version date, last date in table (UTC)): 2025/03/08/15:15, 2017/01/01/00:00:00
+2025-05-09 21:19:04	INFO	importfits::::casa	##########################################
+2025-05-09 21:19:04	INFO	importfits::::casa	##### Begin Task: importfits         #####
+2025-05-09 21:19:04	INFO	importfits::::casa	importfits( fitsimage='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_1-MFS-model.fits', imagename='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_1-MFS-model.casaim', whichrep=0, whichhdu=-1, zeroblanks=True, overwrite=True, defaultaxes=False, defaultaxesvalues=[], beam=[] )
+2025-05-09 21:19:04	INFO	importfits::::	FITS card 27: CDELT1  = -2.08333333333333E-05                                                 
+2025-05-09 21:19:04	INFO	importfits::::	Numeric value does not conform to FITS fixed format.
+2025-05-09 21:19:04	INFO	importfits::::ImageFITSConverter	Processing HDU 0
+2025-05-09 21:19:04	INFO	importfits::ImageFITSConverterImpl::FITSToImage 	Created image of shape [2048, 2048, 1, 1]
+2025-05-09 21:19:04	INFO	importfits::ImageFITSConverterImpl::FITSToImage 	Copy FITS file to '/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_1-MFS-model.casaim' All pixels fit in memory (4194304 pixels).
+2025-05-09 21:19:04	INFO	importfits::::casa	Task importfits complete. Start time: 2025-05-09 22:19:03.589989 End time: 2025-05-09 22:19:03.777428
+2025-05-09 21:19:04	INFO	importfits::::casa	##### End Task: importfits           #####
+2025-05-09 21:19:04	INFO	importfits::::casa	##########################################
+2025-05-09 21:19:04	INFO	ft::::casa	##########################################
+2025-05-09 21:19:04	INFO	ft::::casa	##### Begin Task: ft                 #####
+2025-05-09 21:19:04	INFO	ft::::casa	ft( vis='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms', field='', spw='', model='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_1-MFS-model.casaim', nterms=1, reffreq='', complist='', incremental=False, usescratch=True )
+2025-05-09 21:19:04	INFO	ft::Imager::open() 	Opening MeasurementSet /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms
+2025-05-09 21:19:04	INFO	ft::::	Clearing all model records in MS header.
+2025-05-09 21:19:09	INFO	ft::VisSetUtil::addScrCols	Adding MODEL_DATA column(s).
+2025-05-09 21:21:17	INFO	ft::VisSetUtil::initScrCols	Initializing MODEL_DATA to (unity).
+2025-05-09 21:25:37	INFO	ft::VisSetUtil::initScrCols	Initialized 29652480 rows.
+2025-05-09 21:25:37	INFO	ft::::	Clearing all model records in MS header.
+2025-05-09 21:25:56	INFO	ft::imager::data selection	Performing selection on MeasurementSet : /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms
+2025-05-09 21:25:56	INFO	ft::imager::data selection	Selecting on spectral windows expression : *
+2025-05-09 21:26:09	INFO	ft::::	Clearing all model records in MS header.
+2025-05-09 21:26:28	INFO	ft::imager::data selection	Selected all 29652480 rows
+2025-05-09 21:26:28	INFO	ft::imager::data selection	Selected: [64 chans in spw 0] [64 chans in spw 1] [64 chans in spw 2] [64 chans in spw 3] [64 chans in spw 4] [64 chans in spw 5] [64 chans in spw 6] [64 chans in spw 7] [64 chans in spw 8] [64 chans in spw 9] [64 chans in spw 10] [64 chans in spw 11] [64 chans in spw 12] [64 chans in spw 13] [64 chans in spw 14] [64 chans in spw 15] [64 chans in spw 16] [64 chans in spw 17] [64 chans in spw 18] [64 chans in spw 19] [64 chans in spw 20] [64 chans in spw 21] [64 chans in spw 22] [64 chans in spw 23] [64 chans in spw 24] [64 chans in spw 25] [64 chans in spw 26] [64 chans in spw 27] [64 chans in spw 28] [64 chans in spw 29] [64 chans in spw 30] [64 chans in spw 31]
+2025-05-09 21:26:28	INFO	ft::imager::ft() 	Fourier transforming: replacing MODEL_DATA column
+2025-05-09 21:26:28	INFO	ft::imager::createFTMachine() 	Performing interferometric gridding...
+2025-05-09 21:32:53	INFO	ft::::casa	Task ft complete. Start time: 2025-05-09 22:19:03.786372 End time: 2025-05-09 22:32:52.640978
+2025-05-09 21:32:53	INFO	ft::::casa	##### End Task: ft                   #####
+2025-05-09 21:32:53	INFO	ft::::casa	##########################################
+2025-05-09 21:32:53	INFO	gaincal::::casa	##########################################
+2025-05-09 21:32:53	INFO	gaincal::::casa	##### Begin Task: gaincal            #####
+2025-05-09 21:32:53	INFO	gaincal::::casa	gaincal( vis='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms', caltable='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal', field='', spw='', intent='', selectdata=True, timerange='', uvrange='', antenna='', scan='', observation='', msselect='', solint='inf', combine='', preavg=-1.0, refant='ea23', refantmode='flex', minblperant=4, minsnr=3.0, solnorm=False, normtype='mean', gaintype='G', smodel=[], calmode='p', solmode='', rmsthresh=[], corrdepflags=False, append=False, splinetime=3600.0, npointaver=3, phasewrap=180.0, docallib=False, callib='', gaintable=[], gainfield=[], interp=[], spwmap=[], parang=False )
+2025-05-09 21:32:53	INFO	gaincal::calibrater::open	****Using NEW VI2-driven calibrater tool****
+2025-05-09 21:32:53	INFO	gaincal::calibrater::open	Opening MS: /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms for calibration.
+2025-05-09 21:32:53	INFO	gaincal::Calibrater::	Initializing nominal selection to the whole MS.
+2025-05-09 21:32:53	INFO	gaincal::::casa	NB: gaincal automatically excludes auto-correlations.
+2025-05-09 21:32:53	INFO	calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2025-05-09 21:32:53	INFO	calibrater::reset	Reseting solve/apply state
+2025-05-09 21:32:53	INFO	Calibrater::selectvis	Performing selection on MeasurementSet
+2025-05-09 21:32:53	INFO	Calibrater::selectvis+	 Selecting with TaQL: 'ANTENNA1!=ANTENNA2'
+2025-05-09 21:32:55	INFO	Calibrater::selectvis	Selection did not drop any rows
+2025-05-09 21:32:55	INFO	Calibrater::selectvis	Frequency selection: Selecting all channels in all spws.
+2025-05-09 21:32:55	INFO	calibrater::setdata	chanmode=none nchan=1 start=0 step=1 mStart='0km/s' mStep='0km/s' msSelect='ANTENNA1!=ANTENNA2'
+2025-05-09 21:32:55	INFO	calibrater::setsolve	Beginning setsolve--(MSSelection version)-------
+2025-05-09 21:32:55	INFO	Calibrater::setsolve	Arranging to SOLVE:
+2025-05-09 21:32:55	INFO	Calibrater::setsolve	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal append=false solint=inf refantmode='flex' refant='ea23' minsnr=3 apmode=P solnorm=false
+2025-05-09 21:32:55	INFO	calibrater::solve	Beginning solve-----------------------------
+2025-05-09 21:32:55	INFO	Calibrater::solve	The following calibration terms are arranged for apply:
+2025-05-09 21:32:55	INFO	Calibrater::solve	.   (None)
+2025-05-09 21:32:55	INFO	Calibrater::solve	The following calibration term is arranged for solve:
+2025-05-09 21:32:55	INFO	Calibrater::solve	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal append=false solint=inf refantmode='flex' refant='ea23' minsnr=3 apmode=P solnorm=false
+2025-05-09 21:33:18	INFO	ChannelAverageTVI::parseConfiguration	Channel bin is [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	Derived frequency meta-info for solutions:
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=0 (nchan=1) has centroid freq = 4039000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=1 (nchan=1) has centroid freq = 4167000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=2 (nchan=1) has centroid freq = 4295000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=3 (nchan=1) has centroid freq = 4423000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=4 (nchan=1) has centroid freq = 4551000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=5 (nchan=1) has centroid freq = 4679000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=6 (nchan=1) has centroid freq = 4807000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=7 (nchan=1) has centroid freq = 4935000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=8 (nchan=1) has centroid freq = 5063000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=9 (nchan=1) has centroid freq = 5191000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=10 (nchan=1) has centroid freq = 5319000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=11 (nchan=1) has centroid freq = 5447000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=12 (nchan=1) has centroid freq = 5575000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=13 (nchan=1) has centroid freq = 5703000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=14 (nchan=1) has centroid freq = 5831000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=15 (nchan=1) has centroid freq = 5959000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=16 (nchan=1) has centroid freq = 6807000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=17 (nchan=1) has centroid freq = 6935000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=18 (nchan=1) has centroid freq = 7063000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=19 (nchan=1) has centroid freq = 7191000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=20 (nchan=1) has centroid freq = 7319000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=21 (nchan=1) has centroid freq = 7447000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=22 (nchan=1) has centroid freq = 7575000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=23 (nchan=1) has centroid freq = 7703000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=24 (nchan=1) has centroid freq = 7831000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=25 (nchan=1) has centroid freq = 7959000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=26 (nchan=1) has centroid freq = 6039000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=27 (nchan=1) has centroid freq = 6167000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=28 (nchan=1) has centroid freq = 6295000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=29 (nchan=1) has centroid freq = 6423000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=30 (nchan=1) has centroid freq = 6551000000
+2025-05-09 21:33:19	INFO	FreqMetaData::calcFreqMeta	 Selected spw=31 (nchan=1) has centroid freq = 6679000000
+2025-05-09 21:33:25	INFO	Calibrater::solve	For solint = inf, found 448 solution intervals.
+2025-05-09 21:56:32	INFO	Calibrater::solve	  Found good G Jones solutions in 434 solution intervals.
+2025-05-09 21:56:32	WARN	Calibrater::solve	Spectral window(s) 14, 
+2025-05-09 21:56:32	WARN	Calibrater::solve+	  could not be solved due to missing (pre-)calibration
+2025-05-09 21:56:32	WARN	Calibrater::solve+	    in one or more of the specified tables.
+2025-05-09 21:56:32	WARN	Calibrater::solve+	    Please check your results carefully!
+2025-05-09 21:56:32	INFO		Applying refant: ea23 refantmode = flex (hold alternate refants' phase constant) when refant flagged
+2025-05-09 21:56:33	INFO		Enforcing apmode on solutions.
+2025-05-09 21:56:37	INFO		Writing solutions to table: /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal
+2025-05-09 21:56:37	INFO	Calibrater::solve	----- PER ANTENNA INFO -----
+2025-05-09 21:56:37	INFO	Calibrater::solve	       ANT: 0    ANT: 1    ANT: 2    ANT: 3    ANT: 4    ANT: 5    ANT: 6    ANT: 7    ANT: 8    ANT: 9    ANT: 10    ANT: 11    ANT: 12    ANT: 13    ANT: 14    ANT: 15    ANT: 16    ANT: 17    ANT: 18    ANT: 19    ANT: 20    ANT: 21    ANT: 22    ANT: 23    ANT: 24    ANT: 25    ANT: 26   
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 0 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 1 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 2 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 3 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 4 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 5 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 6 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 7 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 8 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 9 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 10 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 11 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 12 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 13 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 14 [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 15 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 16 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 17 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 18 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 19 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 20 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 21 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [10, 10]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 22 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 23 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [5, 5]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 24 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 25 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [12, 12]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 26 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [11, 11]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 27 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [11, 11]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 28 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [11, 11]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 29 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [11, 11]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 30 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [11, 11]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 31 [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [11, 11]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [0, 0]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14]  [14, 14] 
+2025-05-09 21:56:37	INFO	Calibrater::solve	----- PER SPW INFO -----
+2025-05-09 21:56:37	INFO	Calibrater::solve	       expected  data_unflagged  above_minblperant  above_minsnr
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 0 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 1 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 2 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 3 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 4 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 5 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 6 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 7 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 8 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 9 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 10 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 11 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 12 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 13 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 14 [14, 14]  [0, 0]        [0, 0]            [0, 0]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 15 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 16 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 17 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 18 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 19 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 20 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 21 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 22 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 23 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 24 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 25 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 26 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 27 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 28 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 29 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 30 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	SPW: 31 [14, 14]  [14, 14]        [14, 14]            [14, 14]
+2025-05-09 21:56:37	INFO	Calibrater::solve	----- GLOBAL INFO -----
+2025-05-09 21:56:37	INFO	Calibrater::solve	expected  data_unflagged  above_minblperant  above_minsnr
+2025-05-09 21:56:37	INFO	Calibrater::solve	[448, 448]  [434, 434]        [434, 434]            [434, 434]
+2025-05-09 21:56:37	INFO	calibrater::solve	Finished solving.
+2025-05-09 21:56:37	INFO	gaincal::::casa	Calibration solve statistics per spw:  (expected/attempted/succeeded):
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 0: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 1: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 2: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 3: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 4: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 5: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 6: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 7: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 8: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 9: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 10: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 11: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 12: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 13: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 14: 14/0/0
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 15: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 16: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 17: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 18: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 19: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 20: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 21: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 22: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 23: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 24: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 25: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 26: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 27: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 28: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 29: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 30: 14/14/14
+2025-05-09 21:56:37	INFO	gaincal::::casa	  Spw 31: 14/14/14
+2025-05-09 21:57:21	INFO	gaincal::::casa	Task gaincal complete. Start time: 2025-05-09 22:32:52.667493 End time: 2025-05-09 22:57:21.211159
+2025-05-09 21:57:21	INFO	gaincal::::casa	##### End Task: gaincal              #####
+2025-05-09 21:57:21	INFO	gaincal::::casa	##########################################
+2025-05-09 21:57:21	INFO	applycal::::casa	##########################################
+2025-05-09 21:57:21	INFO	applycal::::casa	##### Begin Task: applycal           #####
+2025-05-09 21:57:21	INFO	applycal::::casa	applycal( vis='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms', field='', spw='', intent='', selectdata=True, timerange='', uvrange='', antenna='', scan='', observation='', msselect='', docallib=False, callib='', gaintable=['/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal'], gainfield=[], interp=[], spwmap=[], calwt=[False], parang=False, applymode='', flagbackup=True )
+2025-05-09 21:57:21	INFO	applycal::calibrater::open	****Using NEW VI2-driven calibrater tool****
+2025-05-09 21:57:21	INFO	applycal::calibrater::open	Opening MS: /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms for calibration.
+2025-05-09 21:57:22	INFO	applycal::VisSetUtil::addScrCols	Adding CORRECTED_DATA column(s).
+2025-05-09 22:01:34	INFO	applycal::Calibrater::	Initializing nominal selection to the whole MS.
+2025-05-09 22:01:34	INFO	applycal::AgentFlagger::open	Table type is Measurement Set
+2025-05-09 22:01:34	INFO	FlagVersion::saveFlagVersion	Creating new backup flag file called applycal_1
+2025-05-09 22:02:06	INFO	calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2025-05-09 22:02:06	INFO	calibrater::reset	Reseting solve/apply state
+2025-05-09 22:02:06	INFO	Calibrater::selectvis	Performing selection on MeasurementSet
+2025-05-09 22:02:06	INFO	Calibrater::selectvis	Selection did not drop any rows
+2025-05-09 22:02:06	INFO	Calibrater::selectvis	Frequency selection: Selecting all channels in all spws.
+2025-05-09 22:02:06	INFO	calibrater::setdata	chanmode=none nchan=1 start=0 step=1 mStart='0km/s' mStep='0km/s' msSelect=''
+2025-05-09 22:02:06	INFO	calibrater::setapply	Beginning setapply--(MSSelection version)-------
+2025-05-09 22:02:06	INFO	Calibrater::setapply(type, applypar)	Arranging to APPLY:
+2025-05-09 22:02:07	INFO	Calibrater::setapply(type, applypar)	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal select= interp=linear spwmap=[-1] calWt=false
+2025-05-09 22:02:07	INFO	calibrater::correct	Beginning correct---------------------------
+2025-05-09 22:02:07	INFO	Calibrater::correct2 (VI2/VB2)	The following calibration terms are arranged for apply:
+2025-05-09 22:02:07	INFO	Calibrater::correct2 (VI2/VB2)	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal select= interp=linear spwmap=[-1] calWt=false
+2025-05-09 22:10:27	WARN	Calibrater::correct2 (VI2/VB2)	Spectral window(s) 14, 
+2025-05-09 22:10:27	WARN	Calibrater::correct2 (VI2/VB2)+	  could not be corrected due to missing (pre-)calibration
+2025-05-09 22:10:27	WARN	Calibrater::correct2 (VI2/VB2)+	    in one or more of the specified tables.
+2025-05-09 22:10:27	WARN	Calibrater::correct2 (VI2/VB2)+	    Please check your results carefully!
+2025-05-09 22:10:27	INFO	calibrater::correct	Finished correcting.
+2025-05-09 22:10:27	INFO	applycal::::casa	Calibration apply flagging statistics (among calibrateable spws):
+2025-05-09 22:10:27	INFO	applycal::::casa	  Total visibilities selected for correction (ncorr x nchan x nrow summed over spws) = -1236119552
+2025-05-09 22:10:27	INFO	applycal::::casa	  Flags:
+2025-05-09 22:10:27	INFO	applycal::::casa	   G Jones: In: 1765711856 / 7353815040   (24.01082766422148%) --> Out: 1769081737 / 7353815040   (24.056652599736857%) (/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_1.cal)
+2025-05-09 22:10:27	INFO	applycal::::casa	Task applycal complete. Start time: 2025-05-09 22:57:21.362514 End time: 2025-05-09 23:10:27.171893
+2025-05-09 22:10:27	INFO	applycal::::casa	##### End Task: applycal             #####
+2025-05-09 22:10:27	INFO	applycal::::casa	##########################################

@@ -27,13 +27,13 @@ casa_path = "/soft/casa-latest/bin/casa"  # Path to CASA (use the correct path)
 initial_model = None               # Optional initial model
 
 # Self-calibration parameters
-#solution_intervals = ["inf", "1min", "30s", "10s", "int","inf"]  # Progressive solint values
-#solution_type = ["G","G","G","G","G","G"]
-#solution_mode = ["p","p","p","p","p","ap"]
+solution_intervals = ["inf", "1min", "30s", "10s", "int","inf","60s"]  # Progressive solint values
+solution_type = ["G","G","G","G","G","G","G"]
+solution_mode = ["p","p","p","p","p","ap","ap"]
 
-solution_intervals = ["int","inf"]  # Progressive solint values
-solution_type = ["G","G"]
-solution_mode = ["p","ap"]
+#solution_intervals = ["int","inf"]  # Progressive solint values
+#solution_type = ["G","G"]
+#solution_mode = ["p","ap"]
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
 continue_imaging=False #Option to re-run imaging even if images exist
@@ -42,12 +42,12 @@ imaging_params = {
 	"size": "2048 2048",          # Image size (pixels)
 	"scale": "0.075asec",             # Pixel scale
 	"weight": "briggs -1",       # Weighting scheme
-	"auto-threshold": "1.0",      # Threshold for CLEAN (σ)
-	"auto-mask": "3.0",           # Mask threshold (σ)
+	"auto-threshold": "0.5",      # Threshold for CLEAN (σ)
+	"auto-mask": "4.0",           # Mask threshold (σ)
 	"niter": "100000",			# Minor cycles
 	"nmiter": "20",				# Major cycles
 	"channels-out": "12",		# Channels to do peak-finding
-	"fit-spectral-pol": "3",		# MFS	
+	"fit-spectral-pol": "4",		# MFS	
 	"padding": "1.4"
 }
 

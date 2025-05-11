@@ -1,0 +1,10 @@
+fitsimage         = '/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_7-MFS-model.fits'
+imagename         = '/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_7-MFS-model.casaim'
+whichrep          = 0
+whichhdu          = -1
+zeroblanks        = True
+overwrite         = True
+defaultaxes       = False
+defaultaxesvalues = []
+beam              = []
+#importfits( fitsimage='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_7-MFS-model.fits',imagename='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_7-MFS-model.casaim',whichrep=0,whichhdu=-1,zeroblanks=True,overwrite=True,defaultaxes=False,defaultaxesvalues=[],beam=[] )

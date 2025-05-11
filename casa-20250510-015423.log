@@ -1,0 +1,342 @@
+2025-05-10 01:54:25	INFO	::casa	
+2025-05-10 01:54:25	INFO	::casa	
+2025-05-10 01:54:25	INFO	::casa	
+2025-05-10 01:54:25	INFO	::casa	
+2025-05-10 01:54:26	INFO	::casa	Python version 3.8.10
+2025-05-10 01:54:26	INFO	::casa	CASA Version PIPELINE 6.5.4.9
+2025-05-10 01:54:26	INFO	::casa	
+2025-05-10 01:54:26	INFO	::casa	Found an existing telemetry logfile: /home/mahatmav/.casa/casastats-6.5.4.9-6c2b5cd5169bd-20250508-142149.log
+2025-05-10 01:54:26	INFO	::casa	Telemetry log file: /home/mahatmav/.casa/casastats-6.5.4.9-6c2b5cd5169bd-20250508-142149.log
+2025-05-10 01:54:26	INFO	::casa	Checking telemetry submission interval
+2025-05-10 01:54:26	INFO	::casa	Telemetry submit interval not reached. Not submitting data.
+2025-05-10 01:54:26	INFO	::casa	Next telemetry data submission in: 5 days, 12:27:23.641789
+2025-05-10 01:54:26	INFO	::casa	optional configuration file config.py not found, continuing CASA startup without it
+2025-05-10 01:54:26	INFO	::casa	
+2025-05-10 01:54:26	INFO	::casa	Checking Measures tables in data repository sub-directory /home/mahatmav/.casa/data/geodetic
+2025-05-10 01:54:26	INFO	::casa	  IERSeop2000 (version date, last date in table (UTC)): 2025/03/10/15:15, 2025/02/08/00:00:00
+2025-05-10 01:54:26	INFO	::casa	  IERSeop97 (version date, last date in table (UTC)): 2025/03/10/15:15, 2025/02/08/00:00:00
+2025-05-10 01:54:26	INFO	::casa	  IERSpredict (version date, last date in table (UTC)): 2025/03/13/15:15, 2025/06/11/00:00:00
+2025-05-10 01:54:26	INFO	::casa	  TAI_UTC (version date, last date in table (UTC)): 2025/03/08/15:15, 2017/01/01/00:00:00
+2025-05-10 01:54:26	INFO	importfits::::casa	##########################################
+2025-05-10 01:54:26	INFO	importfits::::casa	##### Begin Task: importfits         #####
+2025-05-10 01:54:26	INFO	importfits::::casa	importfits( fitsimage='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_5-MFS-model.fits', imagename='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_5-MFS-model.casaim', whichrep=0, whichhdu=-1, zeroblanks=True, overwrite=True, defaultaxes=False, defaultaxesvalues=[], beam=[] )
+2025-05-10 01:54:26	INFO	importfits::::	FITS card 27: CDELT1  = -2.08333333333333E-05                                                 
+2025-05-10 01:54:26	INFO	importfits::::	Numeric value does not conform to FITS fixed format.
+2025-05-10 01:54:26	INFO	importfits::::ImageFITSConverter	Processing HDU 0
+2025-05-10 01:54:26	INFO	importfits::ImageFITSConverterImpl::FITSToImage 	Created image of shape [2048, 2048, 1, 1]
+2025-05-10 01:54:26	INFO	importfits::ImageFITSConverterImpl::FITSToImage 	Copy FITS file to '/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_5-MFS-model.casaim' All pixels fit in memory (4194304 pixels).
+2025-05-10 01:54:26	INFO	importfits::::casa	Task importfits complete. Start time: 2025-05-10 02:54:25.784137 End time: 2025-05-10 02:54:25.976310
+2025-05-10 01:54:26	INFO	importfits::::casa	##### End Task: importfits           #####
+2025-05-10 01:54:26	INFO	importfits::::casa	##########################################
+2025-05-10 01:54:26	INFO	ft::::casa	##########################################
+2025-05-10 01:54:26	INFO	ft::::casa	##### Begin Task: ft                 #####
+2025-05-10 01:54:26	INFO	ft::::casa	ft( vis='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms', field='', spw='', model='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/selfcal_cycle_5-MFS-model.casaim', nterms=1, reffreq='', complist='', incremental=False, usescratch=True )
+2025-05-10 01:54:26	INFO	ft::Imager::open() 	Opening MeasurementSet /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms
+2025-05-10 01:54:26	INFO	ft::::	Clearing all model records in MS header.
+2025-05-10 01:54:45	INFO	ft::imager::data selection	Performing selection on MeasurementSet : /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms
+2025-05-10 01:54:45	INFO	ft::imager::data selection	Selecting on spectral windows expression : *
+2025-05-10 01:54:58	INFO	ft::::	Clearing all model records in MS header.
+2025-05-10 01:55:17	INFO	ft::imager::data selection	Selected all 29652480 rows
+2025-05-10 01:55:17	INFO	ft::imager::data selection	Selected: [64 chans in spw 0] [64 chans in spw 1] [64 chans in spw 2] [64 chans in spw 3] [64 chans in spw 4] [64 chans in spw 5] [64 chans in spw 6] [64 chans in spw 7] [64 chans in spw 8] [64 chans in spw 9] [64 chans in spw 10] [64 chans in spw 11] [64 chans in spw 12] [64 chans in spw 13] [64 chans in spw 14] [64 chans in spw 15] [64 chans in spw 16] [64 chans in spw 17] [64 chans in spw 18] [64 chans in spw 19] [64 chans in spw 20] [64 chans in spw 21] [64 chans in spw 22] [64 chans in spw 23] [64 chans in spw 24] [64 chans in spw 25] [64 chans in spw 26] [64 chans in spw 27] [64 chans in spw 28] [64 chans in spw 29] [64 chans in spw 30] [64 chans in spw 31]
+2025-05-10 01:55:17	INFO	ft::imager::ft() 	Fourier transforming: replacing MODEL_DATA column
+2025-05-10 01:55:17	INFO	ft::imager::createFTMachine() 	Performing interferometric gridding...
+2025-05-10 02:01:53	INFO	ft::::casa	Task ft complete. Start time: 2025-05-10 02:54:25.985868 End time: 2025-05-10 03:01:53.295907
+2025-05-10 02:01:53	INFO	ft::::casa	##### End Task: ft                   #####
+2025-05-10 02:01:53	INFO	ft::::casa	##########################################
+2025-05-10 02:01:53	INFO	gaincal::::casa	##########################################
+2025-05-10 02:01:53	INFO	gaincal::::casa	##### Begin Task: gaincal            #####
+2025-05-10 02:01:53	INFO	gaincal::::casa	gaincal( vis='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms', caltable='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal', field='', spw='', intent='', selectdata=True, timerange='', uvrange='', antenna='', scan='', observation='', msselect='', solint='int', combine='', preavg=-1.0, refant='ea23', refantmode='flex', minblperant=4, minsnr=3.0, solnorm=False, normtype='mean', gaintype='G', smodel=[], calmode='p', solmode='', rmsthresh=[], corrdepflags=False, append=False, splinetime=3600.0, npointaver=3, phasewrap=180.0, docallib=False, callib='', gaintable=[], gainfield=[], interp=[], spwmap=[], parang=False )
+2025-05-10 02:01:53	INFO	gaincal::calibrater::open	****Using NEW VI2-driven calibrater tool****
+2025-05-10 02:01:53	INFO	gaincal::calibrater::open	Opening MS: /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms for calibration.
+2025-05-10 02:01:53	INFO	gaincal::Calibrater::	Initializing nominal selection to the whole MS.
+2025-05-10 02:01:53	INFO	gaincal::::casa	NB: gaincal automatically excludes auto-correlations.
+2025-05-10 02:01:53	INFO	calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2025-05-10 02:01:53	INFO	calibrater::reset	Reseting solve/apply state
+2025-05-10 02:01:53	INFO	Calibrater::selectvis	Performing selection on MeasurementSet
+2025-05-10 02:01:53	INFO	Calibrater::selectvis+	 Selecting with TaQL: 'ANTENNA1!=ANTENNA2'
+2025-05-10 02:01:55	INFO	Calibrater::selectvis	Selection did not drop any rows
+2025-05-10 02:01:55	INFO	Calibrater::selectvis	Frequency selection: Selecting all channels in all spws.
+2025-05-10 02:01:55	INFO	calibrater::setdata	chanmode=none nchan=1 start=0 step=1 mStart='0km/s' mStep='0km/s' msSelect='ANTENNA1!=ANTENNA2'
+2025-05-10 02:01:55	INFO	calibrater::setsolve	Beginning setsolve--(MSSelection version)-------
+2025-05-10 02:01:55	INFO	Calibrater::setsolve	Arranging to SOLVE:
+2025-05-10 02:01:55	INFO	Calibrater::setsolve	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal append=false solint=int refantmode='flex' refant='ea23' minsnr=3 apmode=P solnorm=false
+2025-05-10 02:01:55	INFO	calibrater::solve	Beginning solve-----------------------------
+2025-05-10 02:01:55	INFO	Calibrater::solve	The following calibration terms are arranged for apply:
+2025-05-10 02:01:55	INFO	Calibrater::solve	.   (None)
+2025-05-10 02:01:55	INFO	Calibrater::solve	The following calibration term is arranged for solve:
+2025-05-10 02:01:55	INFO	Calibrater::solve	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal append=false solint=int refantmode='flex' refant='ea23' minsnr=3 apmode=P solnorm=false
+2025-05-10 02:02:16	INFO	ChannelAverageTVI::parseConfiguration	Channel bin is [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	Derived frequency meta-info for solutions:
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=0 (nchan=1) has centroid freq = 4039000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=1 (nchan=1) has centroid freq = 4167000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=2 (nchan=1) has centroid freq = 4295000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=3 (nchan=1) has centroid freq = 4423000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=4 (nchan=1) has centroid freq = 4551000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=5 (nchan=1) has centroid freq = 4679000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=6 (nchan=1) has centroid freq = 4807000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=7 (nchan=1) has centroid freq = 4935000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=8 (nchan=1) has centroid freq = 5063000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=9 (nchan=1) has centroid freq = 5191000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=10 (nchan=1) has centroid freq = 5319000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=11 (nchan=1) has centroid freq = 5447000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=12 (nchan=1) has centroid freq = 5575000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=13 (nchan=1) has centroid freq = 5703000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=14 (nchan=1) has centroid freq = 5831000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=15 (nchan=1) has centroid freq = 5959000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=16 (nchan=1) has centroid freq = 6807000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=17 (nchan=1) has centroid freq = 6935000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=18 (nchan=1) has centroid freq = 7063000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=19 (nchan=1) has centroid freq = 7191000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=20 (nchan=1) has centroid freq = 7319000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=21 (nchan=1) has centroid freq = 7447000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=22 (nchan=1) has centroid freq = 7575000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=23 (nchan=1) has centroid freq = 7703000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=24 (nchan=1) has centroid freq = 7831000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=25 (nchan=1) has centroid freq = 7959000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=26 (nchan=1) has centroid freq = 6039000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=27 (nchan=1) has centroid freq = 6167000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=28 (nchan=1) has centroid freq = 6295000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=29 (nchan=1) has centroid freq = 6423000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=30 (nchan=1) has centroid freq = 6551000000
+2025-05-10 02:02:17	INFO	FreqMetaData::calcFreqMeta	 Selected spw=31 (nchan=1) has centroid freq = 6679000000
+2025-05-10 02:02:26	INFO	Calibrater::solve	For solint = int, found 84480 solution intervals.
+2025-05-10 02:31:30	INFO	Calibrater::solve	  Found good G Jones solutions in 75386 solution intervals.
+2025-05-10 02:31:30	WARN	Calibrater::solve	Spectral window(s) 14, 
+2025-05-10 02:31:30	WARN	Calibrater::solve+	  could not be solved due to missing (pre-)calibration
+2025-05-10 02:31:30	WARN	Calibrater::solve+	    in one or more of the specified tables.
+2025-05-10 02:31:30	WARN	Calibrater::solve+	    Please check your results carefully!
+2025-05-10 02:31:30	INFO		Applying refant: ea23 refantmode = flex (hold alternate refants' phase constant) when refant flagged
+2025-05-10 02:31:31	INFO		At 2024/11/23/09:19:31.0 (Spw=0, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:31	INFO		At 2024/11/23/09:33:09.0 (Spw=0, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:31	INFO		At 2024/11/23/09:56:41.0 (Spw=0, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:32	INFO		At 2024/11/23/09:19:31.0 (Spw=1, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:32	INFO		At 2024/11/23/09:33:09.0 (Spw=1, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:32	INFO		At 2024/11/23/09:56:41.0 (Spw=1, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:33	INFO		At 2024/11/23/09:19:31.0 (Spw=2, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:33	INFO		At 2024/11/23/09:33:09.0 (Spw=2, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:33	INFO		At 2024/11/23/09:56:41.0 (Spw=2, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:34	INFO		At 2024/11/23/09:19:31.0 (Spw=3, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:34	INFO		At 2024/11/23/09:33:09.0 (Spw=3, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:34	INFO		At 2024/11/23/09:56:41.0 (Spw=3, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:35	INFO		At 2024/11/23/09:19:31.0 (Spw=4, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:35	INFO		At 2024/11/23/09:33:09.0 (Spw=4, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:35	INFO		At 2024/11/23/09:56:41.0 (Spw=4, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:36	INFO		At 2024/11/23/09:19:31.0 (Spw=5, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:36	INFO		At 2024/11/23/09:33:09.0 (Spw=5, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:36	INFO		At 2024/11/23/09:56:41.0 (Spw=5, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:37	INFO		At 2024/11/23/09:19:31.0 (Spw=6, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:37	INFO		At 2024/11/23/09:33:09.0 (Spw=6, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:37	INFO		At 2024/11/23/09:56:41.0 (Spw=6, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:38	INFO		At 2024/11/23/09:19:31.0 (Spw=7, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:38	INFO		At 2024/11/23/09:33:09.0 (Spw=7, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:38	INFO		At 2024/11/23/09:56:41.0 (Spw=7, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:39	INFO		At 2024/11/23/09:19:31.0 (Spw=8, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:39	INFO		At 2024/11/23/09:33:09.0 (Spw=8, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:39	INFO		At 2024/11/23/09:56:41.0 (Spw=8, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:40	INFO		At 2024/11/23/09:19:31.0 (Spw=9, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:40	INFO		At 2024/11/23/09:33:09.0 (Spw=9, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:40	INFO		At 2024/11/23/09:56:41.0 (Spw=9, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:41	INFO		At 2024/11/23/09:19:31.0 (Spw=10, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:41	INFO		At 2024/11/23/09:33:09.0 (Spw=10, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:41	INFO		At 2024/11/23/09:56:41.0 (Spw=10, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:42	INFO		At 2024/11/23/09:19:31.0 (Spw=11, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:42	INFO		At 2024/11/23/09:33:09.0 (Spw=11, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:42	INFO		At 2024/11/23/09:56:41.0 (Spw=11, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:43	INFO		At 2024/11/23/09:19:31.0 (Spw=12, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:43	INFO		At 2024/11/23/09:33:09.0 (Spw=12, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:43	INFO		At 2024/11/23/09:56:41.0 (Spw=12, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:44	INFO		At 2024/11/23/09:19:31.0 (Spw=13, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:44	INFO		At 2024/11/23/09:33:09.0 (Spw=13, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:44	INFO		At 2024/11/23/09:56:41.0 (Spw=13, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:45	INFO		At 2024/11/23/09:19:31.0 (Spw=15, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:45	INFO		At 2024/11/23/09:33:09.0 (Spw=15, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:45	INFO		At 2024/11/23/09:56:41.0 (Spw=15, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:46	INFO		At 2024/11/23/09:19:31.0 (Spw=16, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:46	INFO		At 2024/11/23/09:33:09.0 (Spw=16, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:46	INFO		At 2024/11/23/09:56:41.0 (Spw=16, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:47	INFO		At 2024/11/23/09:19:31.0 (Spw=17, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:47	INFO		At 2024/11/23/09:33:09.0 (Spw=17, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:47	INFO		At 2024/11/23/09:56:41.0 (Spw=17, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:48	INFO		At 2024/11/23/09:19:31.0 (Spw=18, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:48	INFO		At 2024/11/23/09:33:09.0 (Spw=18, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:48	INFO		At 2024/11/23/09:56:41.0 (Spw=18, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:49	INFO		At 2024/11/23/09:19:31.0 (Spw=19, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:49	INFO		At 2024/11/23/09:33:09.0 (Spw=19, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:49	INFO		At 2024/11/23/09:56:41.0 (Spw=19, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:50	INFO		At 2024/11/23/09:19:31.0 (Spw=20, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:50	INFO		At 2024/11/23/09:33:09.0 (Spw=20, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:50	INFO		At 2024/11/23/09:56:41.0 (Spw=20, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:51	INFO		At 2024/11/23/09:19:31.0 (Spw=21, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:51	INFO		At 2024/11/23/09:33:09.0 (Spw=21, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:51	INFO		At 2024/11/23/09:56:41.0 (Spw=21, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:52	INFO		At 2024/11/23/09:19:31.0 (Spw=22, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:52	INFO		At 2024/11/23/09:33:09.0 (Spw=22, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:52	INFO		At 2024/11/23/09:56:41.0 (Spw=22, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:53	INFO		At 2024/11/23/09:19:31.0 (Spw=23, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:53	INFO		At 2024/11/23/09:33:09.0 (Spw=23, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:53	INFO		At 2024/11/23/09:56:41.0 (Spw=23, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:54	INFO		At 2024/11/23/09:19:31.0 (Spw=24, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:54	INFO		At 2024/11/23/09:33:09.0 (Spw=24, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:54	INFO		At 2024/11/23/09:56:41.0 (Spw=24, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:55	INFO		At 2024/11/23/09:19:31.0 (Spw=25, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:55	INFO		At 2024/11/23/09:33:09.0 (Spw=25, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:55	INFO		At 2024/11/23/09:56:41.0 (Spw=25, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:56	INFO		At 2024/11/23/09:19:31.0 (Spw=26, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:56	INFO		At 2024/11/23/09:56:41.0 (Spw=26, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:57	INFO		At 2024/11/23/09:19:31.0 (Spw=27, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:57	INFO		At 2024/11/23/09:56:41.0 (Spw=27, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:58	INFO		At 2024/11/23/09:19:31.0 (Spw=28, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:58	INFO		At 2024/11/23/09:56:41.0 (Spw=28, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:31:59	INFO		At 2024/11/23/09:19:31.0 (Spw=29, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:31:59	INFO		At 2024/11/23/09:56:41.0 (Spw=29, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:32:00	INFO		At 2024/11/23/09:19:31.0 (Spw=30, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:32:00	INFO		At 2024/11/23/09:56:41.0 (Spw=30, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:32:01	INFO		At 2024/11/23/09:19:31.0 (Spw=31, Fld=0), using refant ea15 (id=13) (alternate)
+2025-05-10 02:32:01	INFO		At 2024/11/23/09:56:41.0 (Spw=31, Fld=0), using refant ea11 (id=10) (alternate)
+2025-05-10 02:32:02	INFO		 NB: An alternate refant was used at least once to maintain
+2025-05-10 02:32:02	INFO	+	  phase continuity where the user's preferred refant drops out.
+2025-05-10 02:32:02	INFO	+	  Alternate refants are held constant in phase (_not_ zeroed)
+2025-05-10 02:32:02	INFO	+	  during these periods, and the preferred refant may return at
+2025-05-10 02:32:02	INFO	+	  a non-zero phase.  This is generally harmless.
+2025-05-10 02:32:02	INFO		Enforcing apmode on solutions.
+2025-05-10 02:44:04	INFO		Writing solutions to table: /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal
+2025-05-10 02:44:42	INFO	Calibrater::solve	----- PER ANTENNA INFO -----
+2025-05-10 02:44:42	INFO	Calibrater::solve	       ANT: 0    ANT: 1    ANT: 2    ANT: 3    ANT: 4    ANT: 5    ANT: 6    ANT: 7    ANT: 8    ANT: 9    ANT: 10    ANT: 11    ANT: 12    ANT: 13    ANT: 14    ANT: 15    ANT: 16    ANT: 17    ANT: 18    ANT: 19    ANT: 20    ANT: 21    ANT: 22    ANT: 23    ANT: 24    ANT: 25    ANT: 26   
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 0 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 1 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 2 [2422, 2422]  [2409, 2409]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2424, 2424]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2427, 2427]  [2429, 2429]  [2408, 2408]  [2431, 2431]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 3 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 4 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 5 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 6 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 7 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [0, 0]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 8 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [0, 0]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 9 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 10 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 11 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 12 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 13 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 14 [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0]  [0, 0] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 15 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 16 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2365, 2368]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 17 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2375, 2376]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 18 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2325, 2325]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2408, 2408]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 19 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2412, 2412]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 20 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2410, 2410]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 21 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [349, 349]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 22 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2325, 2325]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2402, 2403]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 23 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [135, 135]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 24 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [2345, 2354]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 25 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2432, 2432]  [2416, 2416]  [2420, 2420]  [2322, 2322]  [2429, 2429]  [2429, 2429]  [2415, 2415]  [2415, 2415]  [526, 526]  [2414, 2414]  [2432, 2432]  [2429, 2429]  [2414, 2414]  [2432, 2432]  [2430, 2430]  [2432, 2432]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 26 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2431, 2431]  [2415, 2415]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [1796, 1796]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2431, 2431]  [2429, 2429]  [2414, 2414]  [0, 0]  [2430, 2430]  [2431, 2431]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 27 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2431, 2431]  [0, 0]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [1796, 1796]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2431, 2431]  [2429, 2429]  [2414, 2414]  [0, 0]  [2430, 2430]  [2431, 2431]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 28 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2431, 2431]  [2415, 2415]  [2420, 2420]  [2323, 2323]  [2429, 2429]  [2429, 2429]  [1796, 1796]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2431, 2431]  [2429, 2429]  [2414, 2414]  [0, 0]  [2430, 2430]  [2431, 2431]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 29 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2431, 2431]  [2415, 2415]  [2420, 2420]  [2321, 2321]  [2429, 2429]  [2429, 2429]  [1796, 1796]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2431, 2431]  [2429, 2429]  [2414, 2414]  [0, 0]  [2430, 2430]  [2431, 2431]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 30 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2431, 2431]  [2415, 2415]  [2420, 2420]  [2320, 2320]  [2429, 2429]  [2429, 2429]  [1796, 1796]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2431, 2431]  [2429, 2429]  [2414, 2414]  [0, 0]  [2430, 2430]  [2431, 2431]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 31 [2422, 2422]  [2414, 2414]  [2429, 2429]  [2431, 2431]  [2415, 2415]  [2420, 2420]  [2320, 2320]  [2429, 2429]  [2429, 2429]  [1796, 1796]  [2415, 2415]  [2430, 2430]  [2414, 2414]  [2431, 2431]  [2429, 2429]  [2414, 2414]  [0, 0]  [2430, 2430]  [2431, 2431]  [2414, 2414]  [2429, 2429]  [2429, 2429]  [2429, 2429]  [2414, 2414]  [2385, 2385]  [2429, 2429]  [2414, 2414] 
+2025-05-10 02:44:42	INFO	Calibrater::solve	----- PER SPW INFO -----
+2025-05-10 02:44:42	INFO	Calibrater::solve	       expected  data_unflagged  above_minblperant  above_minsnr
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 0 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 1 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 2 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 3 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 4 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 5 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 6 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 7 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 8 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 9 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 10 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 11 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 12 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 13 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 14 [2640, 2640]  [0, 0]        [0, 0]            [0, 0]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 15 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 16 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 17 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 18 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 19 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 20 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 21 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 22 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 23 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 24 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 25 [2640, 2640]  [2438, 2438]        [2432, 2432]            [2432, 2432]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 26 [2640, 2640]  [2438, 2438]        [2431, 2431]            [2431, 2431]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 27 [2640, 2640]  [2438, 2438]        [2431, 2431]            [2431, 2431]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 28 [2640, 2640]  [2438, 2438]        [2431, 2431]            [2431, 2431]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 29 [2640, 2640]  [2438, 2438]        [2431, 2431]            [2431, 2431]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 30 [2640, 2640]  [2438, 2438]        [2431, 2431]            [2431, 2431]
+2025-05-10 02:44:42	INFO	Calibrater::solve	SPW: 31 [2640, 2640]  [2438, 2438]        [2431, 2431]            [2431, 2431]
+2025-05-10 02:44:42	INFO	Calibrater::solve	----- GLOBAL INFO -----
+2025-05-10 02:44:42	INFO	Calibrater::solve	expected  data_unflagged  above_minblperant  above_minsnr
+2025-05-10 02:44:42	INFO	Calibrater::solve	[84480, 84480]  [75578, 75578]        [75386, 75386]            [75386, 75386]
+2025-05-10 02:44:42	INFO	calibrater::solve	Finished solving.
+2025-05-10 02:44:42	INFO	gaincal::::casa	Calibration solve statistics per spw:  (expected/attempted/succeeded):
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 0: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 1: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 2: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 3: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 4: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 5: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 6: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 7: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 8: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 9: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 10: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 11: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 12: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 13: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 14: 2640/0/0
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 15: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 16: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 17: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 18: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 19: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 20: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 21: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 22: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 23: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 24: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 25: 2640/2438/2432
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 26: 2640/2438/2431
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 27: 2640/2438/2431
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 28: 2640/2438/2431
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 29: 2640/2438/2431
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 30: 2640/2438/2431
+2025-05-10 02:44:42	INFO	gaincal::::casa	  Spw 31: 2640/2438/2431
+2025-05-10 02:45:30	INFO	gaincal::::casa	Task gaincal complete. Start time: 2025-05-10 03:01:53.322947 End time: 2025-05-10 03:45:30.311537
+2025-05-10 02:45:30	INFO	gaincal::::casa	##### End Task: gaincal              #####
+2025-05-10 02:45:30	INFO	gaincal::::casa	##########################################
+2025-05-10 02:45:30	INFO	applycal::::casa	##########################################
+2025-05-10 02:45:30	INFO	applycal::::casa	##### Begin Task: applycal           #####
+2025-05-10 02:45:30	INFO	applycal::::casa	applycal( vis='/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms', field='', spw='', intent='', selectdata=True, timerange='', uvrange='', antenna='', scan='', observation='', msselect='', docallib=False, callib='', gaintable=['/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal'], gainfield=[], interp=[], spwmap=[], calwt=[False], parang=False, applymode='', flagbackup=True )
+2025-05-10 02:45:31	INFO	applycal::calibrater::open	****Using NEW VI2-driven calibrater tool****
+2025-05-10 02:45:31	INFO	applycal::calibrater::open	Opening MS: /beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/24B-425_3C123_Aarray_Cband_calib_vla_selfcal_test.ms for calibration.
+2025-05-10 02:45:31	INFO	applycal::Calibrater::	Initializing nominal selection to the whole MS.
+2025-05-10 02:45:31	INFO	applycal::AgentFlagger::open	Table type is Measurement Set
+2025-05-10 02:45:31	INFO	FlagVersion::saveFlagVersion	Creating new backup flag file called applycal_5
+2025-05-10 02:46:02	INFO	calibrater::setdata	Beginning selectvis--(MSSelection version)-------
+2025-05-10 02:46:02	INFO	calibrater::reset	Reseting solve/apply state
+2025-05-10 02:46:02	INFO	Calibrater::selectvis	Performing selection on MeasurementSet
+2025-05-10 02:46:02	INFO	Calibrater::selectvis	Selection did not drop any rows
+2025-05-10 02:46:02	INFO	Calibrater::selectvis	Frequency selection: Selecting all channels in all spws.
+2025-05-10 02:46:02	INFO	calibrater::setdata	chanmode=none nchan=1 start=0 step=1 mStart='0km/s' mStep='0km/s' msSelect=''
+2025-05-10 02:46:02	INFO	calibrater::setapply	Beginning setapply--(MSSelection version)-------
+2025-05-10 02:46:02	INFO	Calibrater::setapply(type, applypar)	Arranging to APPLY:
+2025-05-10 02:46:18	INFO	Calibrater::setapply(type, applypar)	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal select= interp=linear spwmap=[-1] calWt=false
+2025-05-10 02:46:18	INFO	calibrater::correct	Beginning correct---------------------------
+2025-05-10 02:46:18	INFO	Calibrater::correct2 (VI2/VB2)	The following calibration terms are arranged for apply:
+2025-05-10 02:46:18	INFO	Calibrater::correct2 (VI2/VB2)	.   G Jones: table=/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal select= interp=linear spwmap=[-1] calWt=false
+2025-05-10 02:55:07	WARN	Calibrater::correct2 (VI2/VB2)	Spectral window(s) 14, 
+2025-05-10 02:55:07	WARN	Calibrater::correct2 (VI2/VB2)+	  could not be corrected due to missing (pre-)calibration
+2025-05-10 02:55:07	WARN	Calibrater::correct2 (VI2/VB2)+	    in one or more of the specified tables.
+2025-05-10 02:55:07	WARN	Calibrater::correct2 (VI2/VB2)+	    Please check your results carefully!
+2025-05-10 02:55:07	INFO	calibrater::correct	Finished correcting.
+2025-05-10 02:55:07	INFO	applycal::::casa	Calibration apply flagging statistics (among calibrateable spws):
+2025-05-10 02:55:07	INFO	applycal::::casa	  Total visibilities selected for correction (ncorr x nchan x nrow summed over spws) = -1236119552
+2025-05-10 02:55:07	INFO	applycal::::casa	  Flags:
+2025-05-10 02:55:07	INFO	applycal::::casa	   G Jones: In: 1815290167 / 7353815040   (24.685012570019712%) --> Out: 1815460675 / 7353815040   (24.687331203260722%) (/beegfs/general/mahatmav/lofar/long_baseline/3C123/vla/Cband/vla_selfcal_outputs_new/gains_cycle_5.cal)
+2025-05-10 02:55:09	INFO	applycal::::casa	Task applycal complete. Start time: 2025-05-10 03:45:30.466197 End time: 2025-05-10 03:55:08.826833
+2025-05-10 02:55:09	INFO	applycal::::casa	##### End Task: applycal             #####
+2025-05-10 02:55:09	INFO	applycal::::casa	##########################################
