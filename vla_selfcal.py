@@ -109,6 +109,8 @@ solution_mode = {solution_mode}
 solution_intervals = {solution_intervals}
 solution_type = {solution_type}
 temp_gain_table = None
+temp_p_gain_table=None
+temp_ap_gain_table=None
 
 # Get FITS model image from WSClean
 importfits(fitsimage='{image_prefix}-MFS-model.fits', imagename='{image_prefix}-MFS-model.casaim',overwrite=True)
@@ -150,7 +152,7 @@ if '{solution_type[idx]}'=="B":
 			break
 	temp_ap_gain_table = f"{output_dir}/temp_pre_bp_ap_cycle{idx+1}.cal"
 	gaincal(vis='{msfile}', caltable=temp_ap_gain_table, solint=prev_solint, refant='ea23', 
-		gaintype=solution_type[prev_idx]', calmode=solution_mode[prev_idx], 
+		gaintype=solution_type[prev_idx], calmode=solution_mode[prev_idx], 
 		gaintable=[temp_p_gain_table],solnorm=True)
 
 	#Now do bp with previous p and ap solutions
