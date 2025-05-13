@@ -2,15 +2,116 @@ import os
 import subprocess
 import logging
 import sys
-
-
-# Set up logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("selfcal")
+#import astropy
+import matplotlib.pyplot as plt
 
 # Define paths and parameters
 msfile = sys.argv[1]  # Path to your Measurement Set
 output_dir = sys.argv[2]     # Directory for outputs
+
+"""
+def findrms(mIn,maskSup=1e-7):
+	
+	#find the rms of an array, from Cycil Tasse/kMS
+	
+	m=mIn[np.abs(mIn)>maskSup]
+	rmsold=np.std(m)
+	diff=1e-1
+	cut=3.
+	med=np.median(m)
+	for i in range(10):
+		find=np.where(np.abs(m-med)<rmsold*cut)[0]
+		rms=np.std(m[ind])
+		if np.abs((rms-rmsold)/rmsold)<diff: 
+			break
+		rmsold=rms
+	return rms
+
+def flatten(f):
+	#Flatten a fits file so that it becomes a 2D image. Return new header and data
+
+	naxis=f[0].header['NAXIS']
+	if naxis==2:
+		return fits.PrimaryHDU(header=f[0].header,data=f[0].data)
+
+	w = WCS(f[0].header)
+	wn=WCS(naxis=2)
+
+	wn.wcs.crpix[0]=w.wcs.crpix[0]
+	wn.wcs.crpix[1]=w.wcs.crpix[1]
+	wn.wcs.cdelt=w.wcs.cdelt[0:2]
+	wn.wcs.crval=w.wcs.crval[0:2]
+	wn.wcs.ctype[0]=w.wcs.ctype[0]
+	wn.wcs.ctype[1]=w.wcs.ctype[1]
+
+	header = wn.to_header()
+	header["NAXIS"]=2
+	copy=('EQUINOX','EPOCH','BMAJ', 'BMIN', 'BPA', 'RESTFRQ', 'TELESCOP', 'OBSERVER')
+	for k in copy:
+		r=f[0].header.get(k)
+		if r is not None:
+			header[k]=r
+
+	slice=[]
+	for i in range(naxis,0,-1):
+		if i<=2:
+			slice.append(np.s_[:],)
+		else:
+			slice.append(0)
+		
+	hdu = fits.PrimaryHDU(header=header,data=f[0].data[tuple(slice)])
+	return hdu
+
+def plotimage_aplpy(fitsimagename, outplotname, mask=None, rmsnoiseimage=None):
+	import aplpy
+	# image noise for plotting
+	if rmsnoiseimage is None:
+		hdulist = fits.open(fitsimagename)
+	else:
+		hdulist = fits.open(rmsnoiseimage)
+		imagenoise = findrms(np.ndarray.flatten(hdulist[0].data))
+		hdulist.close() 
+
+	# image noise info
+	hdulist = fits.open(fitsimagename) 
+	imagenoiseinfo = findrms(np.ndarray.flatten(hdulist[0].data))
+	logger.info(fitsimagename + ' Max image: ' + str(np.max(np.ndarray.flatten(hdulist[0].data))))
+	logger.info(fitsimagename + ' Min image: ' + str(np.min(np.ndarray.flatten(hdulist[0].data))))
+	hdulist.close()
+
+	f = aplpy.FITSFigure(fitsimagename, slices=[0, 0])
+	f.show_colorscale(vmax=16*imagenoise, vmin=-6*imagenoise, cmap='bone')
+	f.set_title(fitsimagename+' (noise = {} mJy/beam)'.format(round(imagenoiseinfo*1e3, 3)))
+	try: # to work around an aplpy error
+		f.add_beam()
+		f.beam.set_frame(True)
+		f.beam.set_color('white')
+		f.beam.set_edgecolor('black')
+		f.beam.set_linewidth(1.)
+	except:
+		pass
+
+	f.add_grid()
+	f.grid.set_color('white')
+	f.grid.set_alpha(0.5)
+	f.grid.set_linewidth(0.2)
+	f.add_colorbar()
+	f.colorbar.set_axis_label_text('Flux (Jy beam$^{-1}$)')
+	if mask is not None:
+		try:
+			f.show_contour(mask, colors='red', levels=[0.1*imagenoise], filled=False, smooth=1, alpha=0.6, linewidths=1)
+		except:
+			pass
+	if os.path.isfile(outplotname + '.png'):
+		os.system('rm -f ' + outplotname + '.png')
+	f.save(outplotname, dpi=120, format='png')
+	logger.info(fitsimagename + ' RMS noise: ' + str(imagenoiseinfo))
+	return
+"""
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("selfcal")
+
 
 try:
 	os.makedirs(output_dir, exist_ok=True)
@@ -33,10 +134,10 @@ solution_mode = ["p","p","ap","ap","ap","",""]
 
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
-continue_imaging=False #Option to re-run imaging even if images exist
+continue_imaging=True #Option to re-run imaging even if images exist
 # Imaging parameters for WSClean
 imaging_params = {
-	"size": "2048 2048",          # Image size (pixels)
+	"size": "4096 4096",          # Image size (pixels)
 	"scale": "0.075asec",             # Pixel scale
 	"weight": "briggs -1",       # Weighting scheme
 	"auto-threshold": "0.5",      # Threshold for CLEAN (σ)
@@ -98,7 +199,12 @@ for idx, solint in enumerate(solution_intervals):
 		print(f'First image exists already! Proceeding with calibration')
 	else:
 		run_command(" ".join(wsclean_cmd), shell=True)
-
+		"""
+		if {imaging_params['channels-out']}>1:
+			fitsimage={image_prefix}+"-MFS-image.fits"
+		pngimage=f"{output_dir}/selfcal_cycle_{idx + 1}"
+		plotimage_aplpy(fitsimage,pngimage)
+		"""
 	# CASA calibration script
 	gain_table = f"{output_dir}/gains_cycle_{idx + 1}.cal"
 	casa_script = f"""
@@ -157,7 +263,7 @@ if '{solution_type[idx]}'=="B":
 
 	#Now do bp with previous p and ap solutions
 	bandpass(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
-		bandtype='{solution_type[idx]}', calmode=solution_mode[prev_idx], 
+		bandtype='{solution_type[idx]}', 
 		gaintable=[temp_p_gain_table,temp_ap_gain_table],solnorm=True)
 
 	# Collect recently created tables
