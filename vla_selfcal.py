@@ -13,7 +13,7 @@ output_dir = sys.argv[2]     # Directory for outputs
 def findrms(mIn,maskSup=1e-7):
 	
 	#find the rms of an array, from Cycil Tasse/kMS
-	
+
 	m=mIn[np.abs(mIn)>maskSup]
 	rmsold=np.std(m)
 	diff=1e-1
@@ -132,21 +132,26 @@ solution_intervals = ["10s","int","inf","60s","30s","inf","inf"]  # Progressive 
 solution_type = ["G","G","G","G","G","B","B"]
 solution_mode = ["p","p","ap","ap","ap","",""]
 
+#solution_intervals = ["inf","inf","60s","30s","10s","int","inf","120s","inf","inf"]  # Progressive solint values
+#solution_type = ["T","G","G","G","G","G","G","G","B","B"]
+#solution_mode = ["p","p","p","p","p","p","ap","ap","",""]
+
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
-continue_imaging=True #Option to re-run imaging even if images exist
+continue_imaging=False #Option to re-run imaging even if images exist
 # Imaging parameters for WSClean
 imaging_params = {
 	"size": "4096 4096",          # Image size (pixels)
 	"scale": "0.075asec",             # Pixel scale
 	"weight": "briggs -1",       # Weighting scheme
 	"auto-threshold": "0.5",      # Threshold for CLEAN (σ)
-	"auto-mask": "4.0",           # Mask threshold (σ)
-	"niter": "500000",			# Minor cycles
+	"auto-mask": "3.0",           # Mask threshold (σ)
+	"niter": "100000",			# Minor cycles
 	"nmiter": "20",				# Major cycles
 	"channels-out": "12",		# Channels to do peak-finding
 	"fit-spectral-pol": "4",		# MFS	
-	"padding": "1.4"
+	"padding": "1.4",
+	"max-scales": "5"
 }
 
 # Function to run a command and check output
@@ -190,6 +195,8 @@ for idx, solint in enumerate(solution_intervals):
 		f"-fit-spectral-pol {imaging_params['fit-spectral-pol']}",
 		f"-join-channels ",
 		f"-multiscale ",
+		f"-multiscale-max-scales {imaging_params['max-scales']}",
+		f"-multiscale-scale-bias 0.8",
 		f"-padding {imaging_params['padding']}",
 		msfile,
 	]
