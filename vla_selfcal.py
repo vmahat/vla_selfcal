@@ -271,7 +271,7 @@ if '{solution_type[idx]}'=="B":
 	#Now do bp with previous p and ap solutions
 	bandpass(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
 		bandtype='{solution_type[idx]}', 
-		gaintable=[temp_p_gain_table,temp_ap_gain_table],solnorm=True)
+		gaintable=[temp_p_gain_table,temp_ap_gain_table],solnorm=False)
 
 	# Collect recently created tables
 
