@@ -5,9 +5,27 @@ import sys
 #import astropy
 import matplotlib.pyplot as plt
 
-# Define paths and parameters
-msfile = sys.argv[1]  # Path to your Measurement Set
-output_dir = sys.argv[2]     # Directory for outputs
+if len(sys.argv) < 4:
+    print("Usage: python selfcal.py <msfile> <output_dir> <config_file.py>")
+    sys.exit(1)
+
+msfile = sys.argv[1]
+output_dir = sys.argv[2]
+config_file = sys.argv[3]
+
+config_globals = {}
+with open(config_file, "r") as f:
+    exec(f.read(), config_globals)
+
+# Extract the lists
+solution_intervals = config_globals.get("solution_intervals")
+solution_type = config_globals.get("solution_type")
+solution_mode = config_globals.get("solution_mode")
+
+# Optional: Validate lengths
+if not (len(solution_intervals) == len(solution_type) == len(solution_mode)):
+    logger.error("Mismatch in lengths of solution lists.")
+    sys.exit(1)
 
 """
 def findrms(mIn,maskSup=1e-7):
@@ -132,9 +150,21 @@ initial_model = None               # Optional initial model
 #solution_type = ["G","G","G","G","G","B","B"]
 #solution_mode = ["p","p","ap","ap","ap","",""]
 
-solution_intervals = ["inf","60s","30s","10s","int","inf","120s","inf","inf","inf"]  # Progressive solint values
-solution_type = ["G","G","G","G","G","G","G","B","B","B"]
-solution_mode = ["p","p","p","p","p","ap","ap","","",""]
+#solution_intervals = ["inf","60s","30s","10s","int","inf","120s","inf","inf","inf"]  # Progressive solint values
+#solution_type = ["G","G","G","G","G","G","G","B","B","B"]
+#solution_mode = ["p","p","p","p","p","ap","ap","","",""]
+
+with open(config_file, 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
+        if not row or row[0].startswith("#"):
+            continue  # skip comments/empty lines
+        solint = row[0].strip()
+        soltype = row[1].strip() if len(row) > 1 else ""
+        solmode = row[2].strip() if len(row) > 2 else ""
+        solution_intervals.append(solint)
+        solution_type.append(soltype)
+        solution_mode.append(solmode)
 
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
