@@ -1,9 +1,18 @@
 #===Calibration parameters===
-solution_intervals=[]
-solution_type=[]
-solution_mode=[]
+
+solution_intervals=["inf","inf","120s","60s","30s",
+"10s","5s","int","inf","inf","60s","30s","inf","inf","inf"]
+
+solution_type=["G","G","G","G","G","G","G","G",
+"G","G","G","G",
+"B","B","B"]
+
+solution_mode=["p","p","p","p","p","p","p","p",
+"ap","ap","ap","ap",
+"",""]
 
 #===Imaging parameters===
+
 imaging_params={
 "size": "4096 4096",
 "scale": "0.02asec",
