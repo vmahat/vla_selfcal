@@ -121,7 +121,7 @@ except:
 
 singularity_path = "/soft/singularity-3.8.4/bin/singularity" #Path to singularity installation
 singularity_bind_path = "/beegfs/general/mahatmav" #Path to directory to bind
-singularity_container_path = "/beegfs/general/mahatmav/lofar/long_baseline/pipeline/flocs_v5.2.0_znver2_znver2.sif" #Path to singularity container containing WSClean
+singularity_container_path = "/beegfs/general/mahatmav/lofar/long_baseline/pipeline/flocs_v5.6.0_znver2_znver2.sif" #Path to singularity container containing WSClean
 
 casa_path = "/soft/casa-latest/bin/casa"  # Path to CASA (use the correct path)
 
@@ -132,9 +132,9 @@ initial_model = None               # Optional initial model
 #solution_type = ["G","G","G","G","G","B","B"]
 #solution_mode = ["p","p","ap","ap","ap","",""]
 
-solution_intervals = ["inf","inf","60s","30s","10s","int","inf","120s","inf","inf"]  # Progressive solint values
-solution_type = ["T","G","G","G","G","G","G","G","B","B"]
-solution_mode = ["p","p","p","p","p","p","ap","ap","",""]
+solution_intervals = ["inf","60s","30s","10s","int","inf","120s","inf","inf","inf"]  # Progressive solint values
+solution_type = ["G","G","G","G","G","G","G","B","B","B"]
+solution_mode = ["p","p","p","p","p","ap","ap","","",""]
 
 threshold = 0.01  # Stopping threshold for residual improvement (Jy)
 gain_solutions = []  # Store gain calibration tables
@@ -142,12 +142,13 @@ continue_imaging=False #Option to re-run imaging even if images exist
 # Imaging parameters for WSClean
 imaging_params = {
 	"size": "4096 4096",          # Image size (pixels)
-	"scale": "0.075asec",             # Pixel scale
+	"scale": "0.02asec",             # Pixel scale
 	"weight": "briggs -0.5",       # Weighting scheme
 	"auto-threshold": "0.5",      # Threshold for CLEAN (σ)
 	"auto-mask": "3.0",           # Mask threshold (σ)
 	"niter": "500000",			# Minor cycles
-	"nmiter": "50",				# Major cycles
+	"nmiter": "50",
+	"mgain": "0.7",				# Major cycles
 	"channels-out": "12",		# Channels to do peak-finding
 	"fit-spectral-pol": "4",		# MFS	
 	"padding": "1.4",
@@ -191,6 +192,7 @@ for idx, solint in enumerate(solution_intervals):
 		f"-name {image_prefix}",
 		f"-niter {imaging_params['niter']}",
 		f"-nmiter {imaging_params['nmiter']}",
+		f"-mgain {imaging_params['mgain']}",
 		f"-channels-out {imaging_params['channels-out']}",
 		f"-fit-spectral-pol {imaging_params['fit-spectral-pol']}",
 		f"-join-channels ",
@@ -198,6 +200,8 @@ for idx, solint in enumerate(solution_intervals):
 		f"-multiscale-max-scales {imaging_params['max-scales']}",
 		f"-multiscale-scale-bias 0.8",
 		f"-padding {imaging_params['padding']}",
+		f"-local-rms ",
+		f"-local-rms-strength 0.5",
 		msfile,
 	]
 	#if initial_model: This doesn't need to exist, surely
