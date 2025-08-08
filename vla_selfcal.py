@@ -4,6 +4,26 @@ import logging
 import sys
 #import astropy
 import matplotlib.pyplot as plt
+import ast
+import csv
+
+def load_calibration_config(config_path):
+    config = {}
+    with open(config_path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue  # Skip empty lines and comments
+            if "=" not in line:
+                continue
+            key, value = line.split("=", 1)
+            key = key.strip()
+            value = value.strip()
+            try:
+                config[key] = ast.literal_eval(value)
+            except Exception as e:
+                raise ValueError(f"Failed to parse line: {line}\n{e}")
+    return config
 
 if len(sys.argv) < 4:
     print("Usage: python selfcal.py <msfile> <output_dir> <config_file.py>")
@@ -13,18 +33,16 @@ msfile = sys.argv[1]
 output_dir = sys.argv[2]
 config_file = sys.argv[3]
 
-config_globals = {}
-with open(config_file, "r") as f:
-    exec(f.read(), config_globals)
+config = load_calibration_config(config_file)
 
 # Extract the lists
-solution_intervals = config_globals.get("solution_intervals")
-solution_type = config_globals.get("solution_type")
-solution_mode = config_globals.get("solution_mode")
+solution_intervals = config.get("solution_intervals")
+solution_type = config.get("solution_type")
+solution_mode = config.get("solution_mode")
 
 # Optional: Validate lengths
 if not (len(solution_intervals) == len(solution_type) == len(solution_mode)):
-    logger.error("Mismatch in lengths of solution lists.")
+    print("Mismatch in lengths of solution lists.")
     sys.exit(1)
 
 """
