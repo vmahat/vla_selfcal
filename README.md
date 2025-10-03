@@ -17,4 +17,4 @@ Initiate a CASA environment
 ### Edit vla_selfcal.py so that singularity and CASA paths point to your installations. Place paths to MS and output directories
 
 ###  Run
-`python3 vla_selfcal.py`
+`python3 vla_selfcal.py <ms> <output_dir> <config.txt>`
