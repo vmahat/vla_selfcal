@@ -1,0 +1,31 @@
+#===Calibration parameters===
+
+solution_intervals=["inf","inf","120s","60s","30s",
+"10s","5s","int","inf","inf","60s","30s","inf","inf","inf"]
+
+solution_type=["G","G","G","G","G","G","G","G",
+"G","G","G","G",
+"B","B","B"]
+
+solution_mode=["p","p","p","p","p","p","p","p",
+"ap","ap","ap","ap",
+"",""]
+
+#===Imaging parameters===
+
+imaging_params={
+"size": "4096 4096",
+"scale": "0.02asec",
+"weight": "briggs -0.5",
+"auto-threshold": "0.5",
+"auto-mask": "3.0",
+"niter": "800000",
+"nmiter": "50",
+"mgain": "0.7",
+"channels-out": "32",
+"fit-spectral-pol":"4",
+"padding": "1.4",
+"max-scales": "8"}
+
+
+
