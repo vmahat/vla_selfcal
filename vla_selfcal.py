@@ -39,6 +39,7 @@ config = load_calibration_config(config_file)
 solution_intervals = config.get("solution_intervals")
 solution_type = config.get("solution_type")
 solution_mode = config.get("solution_mode")
+flag_solutions = config.get("flag_solutions")
 
 # Optional: Validate lengths
 if not (len(solution_intervals) == len(solution_type) == len(solution_mode)):
@@ -325,7 +326,12 @@ if '{solution_type[idx]}'=="B":
 		bandtype='{solution_type[idx]}', 
 		gaintable=[temp_p_gain_table,temp_ap_gain_table],solnorm=False)
 
-	# Collect recently created tables
+#Flag solutions
+if '{flag_solutions}':
+	print('Using rflag algorithm to flag outlier solutions...'):
+	flagdata(vis='{gain_table}',mode='rflag',datacolumn='CPARM')
+
+# Collect recently created tables
 
 current_gain_tables = []
 if temp_gain_table:
