@@ -11,8 +11,9 @@ solution_mode=["p","p","p","p","p","p","p","p",
 "ap","ap","ap","ap",
 "",""]
 
-flag_solutions=False
+flag_residuals=False
 
+smooth_solutions=False
 #===Imaging parameters===
 
 imaging_params={
