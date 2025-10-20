@@ -124,7 +124,7 @@ for idx, solint in enumerate(solution_intervals):
 		"run",
 		f"--bind {singularity_bind_path} {singularity_container_path}",
 		"wsclean",
-		f"-no-update-model-required ",
+		f"-update-model-required ",
 		f"-reorder ",
 		f"-size {imaging_params['size']}",
 		f"-scale {imaging_params['scale']}",
@@ -170,12 +170,6 @@ solution_type = {solution_type}
 temp_gain_table = None
 temp_p_gain_table=None
 temp_ap_gain_table=None
-
-# Get FITS model image from WSClean
-importfits(fitsimage='{image_prefix}-MFS-model.fits', imagename='{image_prefix}-MFS-model.casaim',overwrite=True)
-
-# Predict
-ft(vis='{msfile}', model='{image_prefix}-MFS-model.casaim', usescratch=True)
 
 # Perform gain calibration
 
