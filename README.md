@@ -1,6 +1,13 @@
 #  vla_selfcal
 Self-calibration pipeline to process VLA data, using CASA tools and WSClean. <br />
 
+## Operations  <br />
+- Begins imaging in WSClean using high DR parameters (multi-term, multi-scale, deep clean)
+- Uses model to calibrate on chosen solution intervals and modes
+- (optional) Performs statistical flagging on RESIDUAL_DATA column
+- (optional) Smoothes short-timescale solutions for less noise
+
+
 ##  Install the prerequisite software:
 -Singularity
 -Singularity container from https://tikk3r.github.io/flocs/
