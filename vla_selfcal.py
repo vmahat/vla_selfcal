@@ -60,7 +60,7 @@ except:
 
 singularity_path = "/soft/singularity-3.8.4/bin/singularity" #Path to singularity installation
 singularity_bind_path = "/beegfs/general/mahatmav" #Path to directory to bind
-singularity_container_path = "/beegfs/general/mahatmav/lofar/long_baseline/pipeline/flocs_v5.6.0_znver2_znver2.sif" #Path to singularity container containing WSClean
+singularity_container_path = "/beegfs/general/mahatmav/lofar/long_baseline/pipeline/flocs_v5.7.1_znver2_znver2.sif" #Path to singularity container containing WSClean
 
 casa_path = "/soft/casa-latest/bin/casa"  # Path to CASA (use the correct path)
 
