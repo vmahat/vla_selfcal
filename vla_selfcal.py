@@ -6,6 +6,7 @@ import sys
 import matplotlib.pyplot as plt
 import ast
 import csv
+import shutil
 
 def load_calibration_config(config_path):
     config = {}
@@ -110,6 +111,13 @@ def run_command(cmd, shell=False):
 def run_casa_command(casa_script):
 	casa_cmd = f"{casa_path} --nogui -c {casa_script}"
 	run_command(casa_cmd, shell=True)
+
+#Make a copy of the MS in the output dir
+if os.path.exists(os.path.join(output_dir,os.path.basename(msfile))):
+	pass
+else:
+	shutil.copytree(msfile,os.path.join(output_dir,os.path.basename(msfile)))
+	msfile=os.path.join(output_dir,os.path.basename(msfile))
 
 # Self-calibration loop
 for idx, solint in enumerate(solution_intervals):
@@ -224,7 +232,7 @@ if '{solution_type[idx]}'=="B":
 
 #Flag solutions
 if '{flag_residual}':
-	print('Using rflag algorithm to flag outlier solutions...'):
+	print('Using rflag algorithm to flag outlier solutions...')
 	flagdata(vis='{gain_table}',mode='rflag',datacolumn='CPARM')
 
 # Collect recently created tables
