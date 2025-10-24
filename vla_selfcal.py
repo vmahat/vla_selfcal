@@ -185,7 +185,7 @@ if '{solution_mode[idx]}'=="p":
 	gaincal(vis='{msfile}', caltable='{gain_table}', solint='{solint}', refant='ea23', 
 	gaintype='{solution_type[idx]}', calmode='{solution_mode[idx]}')
 	if "{smooth_solutions}":
-		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',refant='ea23',
+		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',
 		smoothtime=10.0)
 if '{solution_mode[idx]}'=="ap":
 	#Check the last phase-only and find its solint to do another round to pre-apply to ap
@@ -201,7 +201,7 @@ if '{solution_mode[idx]}'=="ap":
 		gaintype='{solution_type[idx]}', calmode='{solution_mode[idx]}', 
 		gaintable=[temp_gain_table],solnorm=True)
 	if "{smooth_solutions}":
-		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',refant='ea23',
+		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',
 		smoothtime=60.0)
 if '{solution_type[idx]}'=="B":
 		#Check the last phase-only and find its solint to do another round to pre-apply to ap
@@ -227,7 +227,7 @@ if '{solution_type[idx]}'=="B":
 		bandtype='{solution_type[idx]}', 
 		gaintable=[temp_p_gain_table,temp_ap_gain_table],solnorm=False)
 	if "{smooth_solutions}":
-		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',refant='ea23',
+		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',
 		smoothtime=600.0)
 
 #Flag solutions
