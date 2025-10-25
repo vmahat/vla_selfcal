@@ -230,11 +230,6 @@ if '{solution_type[idx]}'=="B":
 		smoothcal(vis="{msfile}",tablein='{gain_table}',smoothtype='mean',
 		smoothtime=600.0)
 
-#Flag solutions
-if '{flag_residual}':
-	print('Using rflag algorithm to flag outlier solutions...')
-	flagdata(vis='{gain_table}',mode='rflag',datacolumn='CPARM')
-
 # Collect recently created tables
 
 current_gain_tables = []
@@ -248,6 +243,13 @@ current_gain_tables.append('{gain_table}')
 
 # Apply calibration solutions to the MS
 applycal(vis='{msfile}', gaintable=current_gain_tables, calwt=False)
+
+#Flag solutions
+if '{flag_residual}':
+	#Ensure this is done only once good model is in place
+	if '{solution_mode[idx]}'=="ap" or '{solution_mode[idx]}'=="B":
+		print('Using rflag algorithm to flag outlier solutions...')
+		flagdata(vis='{msfile}',mode='rflag',datacolumn='residual')
 	"""
 	script_path = f"{output_dir}/casa_gaincal_cycle_{idx + 1}.py"
 	with open(script_path, "w") as f:
